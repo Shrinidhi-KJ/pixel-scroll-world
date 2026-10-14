@@ -1,0 +1,9 @@
+{
+  "name": "pixel-scroll-world",
+  "version": "0.1.0",
+  "description": "Build a scroll-driven pixel-art RPG world for a personal site or CV: scrolling walks a character through levels while the real content reads in game dialogue windows.",
+  "author": { "name": "Shrinidhi KJ", "url": "https://shrinidhi-kj.pages.dev" },
+  "homepage": "https://shrinidhi-kj.pages.dev",
+  "license": "MIT",
+  "keywords": ["pixel-art", "portfolio", "cv", "scrollytelling", "canvas", "retro", "rpg"]
+}

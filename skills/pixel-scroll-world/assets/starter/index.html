@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- REPLACE: your name, role and one line about you. Keep everything below real: no invented numbers. -->
+<title>Your Name, your role</title>
+<meta name="description" content="The interactive CV of Your Name. Replace this with one sentence about what you do.">
+<meta property="og:title" content="Your Name, your role">
+<meta property="og:type" content="website">
+<script type="module" src="/src/main.js"></script>
+</head>
+<body>
+<header class="hud">
+  <a class="brand" href="#top">Your Name</a>
+  <p class="hud-level" aria-hidden="true"></p>
+  <button id="view-toggle" type="button">Plain CV</button>
+</header>
+
+<main>
+  <!-- Each section is a stop on the route (see src/route.js). Its window is what a visitor reads while standing there. -->
+  <section id="top"><div class="window">
+    <h1>A wild Your Name appeared!</h1>
+    <p>One or two sentences about who you are and what you build. Scroll to walk through the story.</p>
+  </div></section>
+
+  <section id="about"><div class="window">
+    <h2>About</h2>
+    <p>Where you are, what you do, what you are looking for.</p>
+  </div></section>
+
+  <section id="education"><div class="window">
+    <h2>Education</h2>
+    <p><span class="chip">2020 to 2024</span></p>
+    <p><strong>Your degree</strong><br>Your university, its city</p>
+  </div></section>
+
+  <section id="projects"><div class="window">
+    <h2>Projects</h2>
+    <p><strong>A project</strong>: what you built, how you checked it, and what the result actually was.</p>
+  </div></section>
+
+  <section id="contact"><div class="window">
+    <h2>Contact</h2>
+    <p><a href="mailto:you@example.com">you@example.com</a></p>
+  </div></section>
+</main>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "pixel-scroll-world",
+  "description": "A skill for building scroll-driven pixel-art RPG portfolio sites.",
+  "owner": { "name": "Shrinidhi KJ" },
+  "plugins": [
+    {
+      "name": "pixel-scroll-world",
+      "source": "./",
+      "description": "Build a scroll-driven pixel-art RPG world for a personal site or CV."
+    }
+  ]
+}

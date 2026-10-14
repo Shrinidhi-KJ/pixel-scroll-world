@@ -1,0 +1,45 @@
+/* Two layouts from the same markup: html.game (the pixel world behind dialogue windows) and the
+   plain CV (no class). Everything readable is real text in the page, never drawn into the canvas. */
+:root {
+  --ink: #1a1c2c; --paper: #f8f8f0; --frame: #3a6ea5; --frame-2: #8cc8f4; --gold: #ffd23f; --red: #c8322f;
+  --pix: 'Press Start 2P', 'Courier New', monospace;
+  --body: system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: auto; }
+body { margin: 0; font: 1.05rem/1.5 var(--body); color: var(--ink); background: var(--paper); }
+a { color: var(--frame); }
+:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+
+.hud { position: sticky; top: 0; z-index: 10; display: flex; align-items: center; gap: 12px; padding: 10px 16px; background: var(--paper); border-bottom: 3px solid var(--ink); }
+.brand { font: 400 .75rem/1 var(--pix); color: var(--ink); text-decoration: none; }
+.hud-level { margin: 0 auto 0 0; font: 400 .6rem/1 var(--pix); color: var(--red); text-transform: uppercase; }
+.hud button { font: 400 .6rem/1 var(--pix); padding: 10px 12px; color: var(--ink); background: var(--frame-2); border: 3px solid var(--ink); border-radius: 6px; cursor: pointer; }
+
+main { max-width: 760px; margin: 0 auto; padding: 24px 16px 80px; }
+section { margin: 0 0 32px; }
+h1 { font: 400 clamp(1.4rem, 4vw, 2.2rem)/1.3 var(--pix); margin: 0 0 12px; }
+h2 { font: 400 .95rem/1.5 var(--pix); color: var(--red); margin: 0 0 10px; }
+.chip { display: inline-block; font: 400 .55rem/1.6 var(--pix); padding: 3px 8px; background: var(--gold); border: 2px solid var(--ink); border-radius: 4px; }
+
+/* ---- the game ---- */
+html.game body { background: #10131c; }
+html.game #world { position: fixed; inset: 0 auto auto 0; z-index: 0; image-rendering: pixelated; image-rendering: crisp-edges; }
+html.game .hud { position: fixed; top: 12px; left: 14px; right: 14px; border: 4px solid var(--ink); border-radius: 10px; box-shadow: inset 0 0 0 3px var(--frame-2); }
+html.game main { position: relative; z-index: 1; max-width: none; margin: 0; padding: 0 0 0 clamp(16px, 5vw, 72px); }
+/* each section is a stop: a full screen of scroll, with its window in the middle of it */
+html.game .stop { min-height: 100vh; display: flex; align-items: center; margin: 0; }
+html.game .stop > .window { width: min(460px, 46vw); padding: 22px 22px 20px; background: var(--paper); border: 4px solid var(--ink); border-radius: 12px;
+  box-shadow: inset 0 0 0 4px var(--frame), inset 0 0 0 7px var(--frame-2), 6px 6px 0 rgba(16, 19, 28, .45);
+  opacity: .35; transform: translateY(10px); transition: opacity .25s steps(3), transform .25s steps(3); }
+html.game .stop.is-current > .window { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { html.game .stop > .window { transition: none; } }
+/* phones: the world is a strip at the top, and the windows scroll beneath it */
+@media (max-width: 899px) {
+  html.game main { padding: calc(var(--band, 46vh) + 16px) 16px 40px; }
+  html.game .stop { min-height: calc(100vh - var(--band, 46vh)); align-items: flex-start; }
+  html.game .stop > .window { width: 100%; }
+  html.game #world { z-index: 2; } /* the strip sits over the windows that scroll up beneath it */
+  html.game .hud { top: 6px; left: 6px; right: 6px; padding: 8px 10px; }
+}
+@media (max-width: 479px) { .hud-level { display: none; } }
