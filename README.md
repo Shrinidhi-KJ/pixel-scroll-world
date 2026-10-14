@@ -224,16 +224,6 @@ skills/pixel-scroll-world/
 └── assets/starter/      a working site to start from (Vite, vanilla JS, one canvas)
 ```
 
-## Star history
-
-<a href="https://www.star-history.com/#Shrinidhi-KJ/pixel-scroll-world&Date">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=Shrinidhi-KJ/pixel-scroll-world&type=Date&theme=dark" />
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=Shrinidhi-KJ/pixel-scroll-world&type=Date" />
-    <img alt="Star history of pixel-scroll-world" src="https://api.star-history.com/svg?repos=Shrinidhi-KJ/pixel-scroll-world&type=Date" />
-  </picture>
-</a>
-
 ## Contributing
 
 Ideas, fixes and new recipes are welcome. [Open an issue](https://github.com/Shrinidhi-KJ/pixel-scroll-world/issues)
