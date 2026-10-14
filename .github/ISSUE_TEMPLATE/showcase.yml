@@ -1,0 +1,21 @@
+name: Show your site
+description: Built a site with Pixel Scroll World? Share it.
+labels: [showcase]
+body:
+  - type: input
+    id: link
+    attributes:
+      label: Link
+      placeholder: https://
+    validations:
+      required: true
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: Screenshot
+      description: Drag an image here.
+  - type: textarea
+    id: story
+    attributes:
+      label: Your levels
+      description: Which places and set pieces did you include? Anything the skill could do better?

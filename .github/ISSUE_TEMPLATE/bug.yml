@@ -1,0 +1,23 @@
+name: Bug report
+description: Something in the skill or the starter doesn't work as described.
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you asked the agent, what it did, and what you expected instead.
+    validations:
+      required: true
+  - type: input
+    id: agent
+    attributes:
+      label: Agent and version
+      placeholder: Claude Code 2.x, Codex 0.x, ...
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: Errors or screenshots
+      description: Console errors, build output, or a screenshot of the problem.
